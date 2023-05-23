@@ -1,0 +1,446 @@
+/* Torna a rolagem do documento suave ao clicar em links de ancoragem */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Define a fonte do corpo do documento, define um gradiente de fundo animado, define a altura para preencher a visualização da janela (viewport), e define a cor do texto */
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(-45deg, rgb(172, 142, 147), #a6a6a6);
+    background-size: 600% 600%;
+    animation: gradient 5s ease infinite;
+    height: 100vh;
+    color: whitesmoke;
+}
+
+/* Define o tamanho do cabeçalho, fixa-o no topo da página, estende-o para a largura total da página, aplica um efeito de desfoque ao fundo, e dá-lhe um z-index alto para que sobreponha outros elementos */
+header {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(15px);
+    z-index: 999;
+}
+
+/* Define a exibição de navegação como flexível, alinha os itens no centro, define a largura como 30% da janela de visualização, e distribui os itens igualmente ao longo do eixo horizontal */
+nav {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-around;
+}
+
+/* Remove a decoração de texto dos links, aumenta o tamanho da fonte, adiciona peso à fonte, e define a cor do texto para branco */
+a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+/* Define a margem esquerda para o cabeçalho h1 */
+h1 {
+    margin-left: 50px;
+}
+
+/* Define as margens para o parágrafo */
+p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Define a largura máxima do formulário e centraliza-o na página */
+form {
+    max-width: 420px;
+    margin: 50px auto;
+}
+
+/* Define o tamanho, forma, posicionamento, animação, cor de fundo, sombra interna, e gradiente de fundo para a classe bola */
+.bola {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: absolute;
+    animation: animacao-bola 4s forwards;
+    background-color: whitesmoke;
+    box-shadow: inset -25px -15px 40px rgba(0, 0, 0, .3);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
+}
+
+/* estiliza o círculo, com uma imagem de fundo. A imagem tem uma animação que a faz aparecer após um delay. */
+.imagem-bola {
+    background-image: url('images/foto-perfil.jpg');
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    width: 98%;
+    height: 98%;
+    opacity: 0;
+    animation: mostrar-imagem 1s forwards;
+    animation-delay: 1s;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+/* posiciona o conjunto de links de redes sociais em um local fixo na tela. Esses links aparecem a partir da esquerda por meio de uma animação. */
+.redes-div {
+    position: fixed;
+    width: 45px;
+    height: 150px;
+    top: 200px;
+    justify-content: space-around;
+    line-height: 35px;
+    animation: surgirEsquerda 3s forwards;
+}
+
+/* cria um container fixo no canto superior direito da tela. */
+.corner-div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 590px;
+    height: 70px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* centraliza o nome dentro de um container absoluto. */
+.nome-div {
+    font-family: 'Merriweather', serif;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 60px;
+    padding: 5px;
+}
+
+/* inverte as cores do icone, deixando-as brancas. */
+.icon {
+    filter: brightness(0) invert(1);
+}
+
+/* aplica uma fonte específica ao elemento. */
+.titulo {
+    font-family: 'Merriweather', serif;
+}
+
+/* centraliza seus elementos filhos, tanto horizontalmente quanto verticalmente, em uma coluna. */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 202vh;
+}
+
+/* estiliza um botão com uma animação que o faz surgir do topo. */
+button {
+    width: 170px;
+    padding: 15px 0;
+    position: relative;
+    font-weight: 900;
+    font-size: 14px;
+    border: none;
+    color: whitesmoke;
+    background: rgba(333, 333, 333, 0.5);
+    cursor: pointer;
+    margin-right: 15px;
+    animation: surgirTopo 3s forwards;
+}
+
+/* aplica um efeito de digitação e piscar ao cursor a um texto. */
+.text-effect {
+    margin-top: 70px;
+    margin-left: -116px;
+    font-family: 'Source Code Pro', monospace;
+    border-right: .05em solid black;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 150%;
+    animation: digitando 3s steps(36, end), blink .75s step-end infinite;
+}
+
+/* centraliza um elemento absolutamente posicionado. */
+.content-nome-efeito {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Ajusta o modelo de caixa para todos os elementos para incluir padding e border no tamanho total do elemento */
+* {
+    box-sizing: border-box;
+}
+
+/* Estiliza a entrada do usuário para feedback. Isso inclui caixas de texto e áreas de texto */
+.feedback-input {
+    color: rgba(333, 333, 333, 0.5);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/* Altera a cor da borda do elemento de entrada ao receber foco */
+.feedback-input:focus {
+    border: 2px solid rgba(333, 333, 333, 0.5);
+}
+
+/* Define a altura, o espaçamento entre linhas e a capacidade de redimensionamento para todas as áreas de texto */
+textarea {
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+}
+
+/* Estiliza o botão de envio */
+[type="submit"] {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: rgba(333, 333, 333, 0.5);
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+}
+
+/* Muda a cor de fundo do botão de envio quando o mouse passa sobre ele */
+[type="submit"]:hover {
+    background: #cbbdef;
+}
+
+/* Define o tamanho mínimo do wrapper */
+.wrapper {
+    min-width: min(40rem, 100%);
+}
+
+/* Estiliza a classe box com margens, bordas e animações */
+.box {
+    margin: max(1rem, 3vw);
+    border: 0.35rem solid;
+    padding: 3vw;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite forwards;
+}
+
+/* Modifica a segunda instância da classe box com uma animação e imagem de borda diferente */
+.box:nth-child(2) {
+    border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+    animation: borderRadial var(--d) linear infinite forwards;
+}
+
+/* Define a aparência e o posicionamento dos pseudo-elementos before e after para o botão */
+button::before,
+button::after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+/* Estiliza especificamente o pseudo-elemento before do botão, definindo sua posição e bordas */
+button::before {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid whitesmoke;
+    border-left: 2px solid whitesmoke;
+    transition: 0.5s all;
+}
+
+/* Estiliza especificamente o pseudo-elemento after do botão, definindo sua posição e bordas */
+button::after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    transition: 0.5s all;
+}
+
+/* Muda o tamanho dos pseudo-elementos before e after do botão quando o mouse passa sobre ele */
+button:hover::before,
+button:hover::after {
+    width: 102%;
+    height: 50px;
+}
+
+
+@keyframes animacao-bola {
+    0% {
+        top: -60px;
+        left: calc(50% - 80px);
+    }
+
+    50% {
+        top: calc(30vh - 80px);
+        left: calc(50% - 80px);
+    }
+
+    100% {
+        top: calc(30vh - 80px);
+        left: calc(50% - 80px);
+    }
+}
+
+@keyframes mostrar-imagem {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes surgirEsquerda {
+    0% {
+        transform: translateX(-100%);
+        /* Inicia fora da tela à esquerda */
+        opacity: 0;
+        /* Opacidade 0 */
+    }
+
+    100% {
+        transform: translateX(0%);
+        /* Termina na posição original */
+        opacity: 1;
+        /* Opacidade 1 */
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes surgirTopo {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes digitando {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 37ch;
+    }
+}
+
+@keyframes piscar {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+/* Define propriedades personalizadas para ângulo e gradiente */
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+@property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+}
+
+@property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+}
+
+/* Define valores iniciais para as propriedades personalizadas no elemento root */
+:root {
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: #cbbdef;
+    --c2: rgba(168, 239, 255, 0.1);
+}
+
+/* Define a animação borderRotate */
+@keyframes borderRotate {
+    100% {
+        --angle: 420deg;
+    }
+}
+
+/* Define a animação borderRadial */
+@keyframes borderRadial {
+    20% {
+        --gradX: 100%;
+        --gradY: 50%;
+    }
+
+    40% {
+        --gradX: 100%;
+        --gradY: 100%;
+    }
+
+    60% {
+        --gradX: 50%;
+        --gradY: 100%;
+    }
+
+    80% {
+        --gradX: 0%;
+        --gradY: 50%;
+    }
+
+    100% {
+        --gradX: 50%;
+        --gradY: 0%;
+    }
+}
