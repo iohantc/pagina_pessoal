@@ -12,7 +12,7 @@ Este projeto foi desenvolvido para cumprir os requisitos do trabalho individual 
 
 O projeto segue uma estrutura de pastas organizada, com os arquivos CSS e as imagens armazenados em diretórios separados. Todos os arquivos HTML estão localizados na raiz do projeto.
 
-
+```
 📦 Meu Site Pessoal
  ┣ 📂 css
  ┃ ┗ 📜 style.css
@@ -21,17 +21,17 @@ O projeto segue uma estrutura de pastas organizada, com os arquivos CSS e as ima
  ┃ ┣ 📜 logotipo-do-linkedin.png
  ┃ ┗ 📜 placa-do-github.png
  ┗ 📜 index.html
-
+```
 
 # Como Usar
 
 Para visualizar o projeto localmente, você pode clonar o repositório e abrir o arquivo index.html em seu navegador.
-
+```
 bash
 $ git clone https://github.com/iohantc/pagina_pessoal.git
 $ cd meu-site-pessoal
 $ open index.html
-
+```
 
 # Considerações Finais
 
