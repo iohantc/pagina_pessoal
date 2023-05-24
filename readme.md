@@ -29,7 +29,7 @@ Para visualizar o projeto localmente, você pode clonar o repositório e abrir o
 ```
 bash
 $ git clone https://github.com/iohantc/pagina_pessoal.git
-$ cd meu-site-pessoal
+$ cd pagina_pessoal
 $ open index.html
 ```
 
