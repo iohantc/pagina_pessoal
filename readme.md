@@ -1,4 +1,4 @@
-# Meu Site Pessoal
+# pagina_pessoal
 
 Este é um projeto simples para uma página de apresentação pessoal. O projeto foi construído utilizando tecnologias básicas do front-end como HTML, CSS e JavaScript. A página inclui uma apresentação individual com três seções principais: 
 
@@ -13,7 +13,7 @@ Este projeto foi desenvolvido para cumprir os requisitos do trabalho individual 
 O projeto segue uma estrutura de pastas organizada, com os arquivos CSS e as imagens armazenados em diretórios separados. Todos os arquivos HTML estão localizados na raiz do projeto.
 
 ```
-📦 Meu Site Pessoal
+📦 pagina_pessoal
  ┣ 📂 css
  ┃ ┗ 📜 style.css
  ┣ 📂 images
