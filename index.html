@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Source+Code+Pro&family=Merriweather&display=swap"
         rel="stylesheet">
-
-    <title>Document</title>
+    <title>Página Pessoal</title>
 </head>
 
 <body>
-    <div class="redes-div">
-        <a href="mailto:iohantcabral@gmail.com"><img src="images/gmail.png" alt="Descrição da imagem" width="40"
-                class="icon" alt="endereço de e-mail"></a>
-        <a href="https://www.linkedin.com/in/iohancabral/"><img src="images/logotipo-do-linkedin.png"
-                alt="Descrição da imagem" width="40" class="icon" alt="página do linkedin"></a>
-        <a href="https://github.com/iohantc"><img src="images/placa-do-github.png" alt="Descrição da imagem" width="40"
-                class="icon" alt="página do github"></a>
-    </div>
     <header>
+        <!-- Links das redes sociais -->
+        <div class="redes-div">
+            <a href="mailto:iohantcabral@gmail.com"><img src="images/gmail.png" alt="Endereço de e-mail" width="40"
+                    class="icon"></a>
+            <a href="https://www.linkedin.com/in/iohancabral/"><img src="images/logotipo-do-linkedin.png"
+                    alt="Página do LinkedIn" width="40" class="icon"></a>
+            <a href="https://github.com/iohantc"><img src="images/placa-do-github.png" alt="Página do GitHub" width="40"
+                    class="icon"></a>
+        </div>
+         <!-- Navegação -->
         <nav>
             <div class="corner-div">
                 <a href="#secao1"><button class="button">Sobre</button></a>
@@ -33,73 +34,97 @@
             </div>
         </nav>
     </header>
-    <div class="bola">
-        <div class="imagem-bola"></div>
-    </div>
-    <div class="container">
-        <div class="content-nome-efeito">
-            <div class="nome-div">
-                Iohan Torres Cabral
-            </div>
-            <div id="secao1" class="text-effect">
-                Estudante e programador full-stack.
+     <!-- Conteúdo principal da página -->
+    <main>
+        <div class="bola">
+            <div class="imagem-bola"></div>
+        </div>
+         <!-- Parte de apresentação com nome e título -->
+        <div class="container">
+            <div class="content-nome-efeito">
+                <div class="nome-div">
+                    Iohan Torres Cabral
+                </div>
+                <div class="text-effect">
+                    Estudante e programador full-stack.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="wrapper">
-        <div class="box">
-            <div class="titulo">
-                <h1>Sobre Mim</h1>
-            </div>
-            <p>Me chamo Iohan. Sou estudante de Sistemas de Informação na UTFPR e, atualmente, faço o curso de
-                desenvolvimento
-                full-stack do Códigos do Amanhã.</p>
-            <p>Venho de uma pequena cidade no interior da Bahia, e que teve um papel fundamental na minha formação
-                pessoal.
-                Sou apaixonado por tecnologia e fascinado pela área de dados. Busco sempre aprimorar o meu conhecimento
-                e
-                habilidades para solucionar problemas e tomar decisões mais corretas. Sou também uma pessoa que valoriza
-                muito
-                princípios como empatia, solidariedade e respeito pelo próximo.</p>
-            <p>O meu maior desejo profissional é o de criar soluções inovadoras e que gerem um impacto positivo na
-                vida das pessoas e na sociedade como um todo.</p>
-            <br id="secao2">
-        </div>
-    </div>
-
-    <div class="wrapper">
-        <div class="box">
-            <div class="titulo">
-                <h1>Hobbies</h1>
-            </div>
-            <p>Gosto muito de assistir filmes, séries e documentários. O mais interessante é ver a mensagem que um filme
-                está tenatndo passar subliminarmente. Todas as cenas são pensadas, então gosto de saber o que o diretor
-                quis transmitir ao criar ela.</p>
-            <p>Jogar para mim também é um ótimo passatempo. Passo grande parte do meu tempo livre (atualmente não é
-                muito 😁) jogando para poder descontrair um pouco.</p>
-            <p>Também gosto muito de estudar programação. A minha área de maior afinidade é Data Analytcs 📊 e Machine
-                Learning 🤖. Fico horas e horas programando para fazer tarefas que surgem na minha cabeça aleatoriamente
-                e faço apenas pelo prazer de ver funiconando.</p>
-            <p>Ademais, sair com meus amigos é algo que adoro fazer. Apesar de ser um pouco tímido, estar perto das
-                pessoas, me divertir e conversar com elas é algo que não posso deixar de lado. Estamos constantemente
-                procurando novas coisas para fazer e lugares para visitar. Sou o tipo de pessoa que aceita todo o tipo
-                de convite. Então, se tiver algo em mente, é só me chamar que a resposta provavelmente será SIM! 😉.</p>
-            <br>
-        </div>
-    </div>
-
-    <div id="secao3" class="wrapper">
-        <div class="box">
-            <div class="titulo">
-                <h1>Contato</h1>
-            </div>
-            <form>
-                <input name="Nome" type="text" class="feedback-input" placeholder="Nome" />
-                <input name="E-mail" type="text" class="feedback-input" placeholder="Email" />
-                <textarea name="Mensagem" class="feedback-input" placeholder="Mensagem"></textarea>
-                <input type="submit" value="Enviar ✉️" />
-            </form>
-        </div>
+        <!-- Seção "Sobre mim" -->
+        <section id="secao1">
+            <article class="wrapper">
+                <div class="box">
+                    <div class="titulo">
+                        <h1>Sobre Mim</h1>
+                    </div>
+                    <p>Me chamo Iohan. Sou estudante de Sistemas de Informação na UTFPR e, atualmente, faço o curso de
+                        desenvolvimento
+                        full-stack do Códigos do Amanhã.</p>
+                    <p>Venho de uma pequena cidade no interior da Bahia, e que teve um papel fundamental na minha
+                        formação
+                        pessoal.
+                        Sou apaixonado por tecnologia e fascinado pela área de dados. Busco sempre aprimorar o meu
+                        conhecimento
+                        e
+                        habilidades para solucionar problemas e tomar decisões mais corretas. Sou também uma pessoa que
+                        valoriza
+                        muito
+                        princípios como empatia, solidariedade e respeito pelo próximo.</p>
+                    <p>O meu maior desejo profissional é o de criar soluções inovadoras e que gerem um impacto positivo
+                        na
+                        vida das pessoas e na sociedade como um todo.</p>
+                </div>
+            </article>
+        </section>
+         <!-- Seção "Hobbies" -->
+        <section id="secao2">
+            <article class="wrapper">
+                <div class="box">
+                    <div class="titulo">
+                        <h1>Hobbies</h1>
+                    </div>
+                    <p>Gosto muito de assistir filmes, séries e documentários. O mais interessante é ver a mensagem que
+                        um filme
+                        está tentando passar subliminarmente. Todas as cenas são pensadas, então gosto de saber o que o
+                        diretor
+                        quis transmitir ao criar ela.</p>
+                    <p>Jogar para mim também é um ótimo passatempo. Passo grande parte do meu tempo livre (atualmente
+                        não é
+                        muito 😁) jogando para poder descontrair um pouco.</p>
+                    <p>Também gosto muito de estudar programação. A minha área de maior afinidade é Data Analytcs 📊 e
+                        Machine
+                        Learning 🤖. Fico horas e horas programando para fazer tarefas que surgem na minha cabeça
+                        aleatoriamente
+                        e faço apenas pelo prazer de ver funiconando.</p>
+                    <p>Ademais, sair com meus amigos é algo que adoro fazer. Apesar de ser um pouco tímido, estar perto
+                        das
+                        pessoas, me divertir e conversar com elas é algo que não posso deixar de lado. Estamos
+                        constantemente
+                        procurando novas coisas para fazer e lugares para visitar. Sou o tipo de pessoa que aceita todo
+                        o tipo
+                        de convite. Então, se tiver algo em mente, é só me chamar que a resposta provavelmente será SIM!
+                        😉.</p>
+                </div>
+            </article>
+        </section>
+        <!-- Seção "Contato" -->
+        <section id="secao3">
+            <article class="wrapper">
+                <div class="box">
+                    <div class="titulo">
+                        <h1>Contato</h1>
+                    </div>
+                    <!-- Formulário de contato com nome, e-mail e mensagem -->
+                    <form>
+                        <input name="Nome" type="text" class="feedback-input" placeholder="Nome" />
+                        <input name="E-mail" type="email" class="feedback-input" placeholder="Email" />
+                        <textarea name="Mensagem" class="feedback-input" placeholder="Mensagem"></textarea>
+                        <input type="submit" value="Enviar ✉️" />
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
 
 </html>

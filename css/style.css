@@ -72,7 +72,7 @@ form {
 
 /* estiliza o círculo, com uma imagem de fundo. A imagem tem uma animação que a faz aparecer após um delay. */
 .imagem-bola {
-    background-image: url('images/foto-perfil.jpg');
+    background-image: url('../images/foto-perfil.jpg');
     border-radius: 50%;
     background-size: cover;
     background-position: center;
